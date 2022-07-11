@@ -20,7 +20,7 @@ If manual testing is required, please fill out this table:
 
 
 ## Reviewer Section
-* [ ] Are there breaking changes / are the breaking changes documented?
+* [ ] Are there no breaking changes / are the breaking changes documented?
 * [ ] Are unit tests added? (or not applicable)
 * [ ] Do the edited sections of code match our coding standards
   * e.g. naming conventions adhered, no copy/paste, readable, function names describe the behavior

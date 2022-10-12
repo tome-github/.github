@@ -5,8 +5,11 @@ ticket: DV-none
 <!--commit body should be wrapped at 72 chars as long as this comment-->
 
 
-## Author Section
-<!-- Please only include the relevant section -->
+## Testing notes from the author
+<!--
+This section is for notes on how to test or comments abou the review.
+Please put any additional description about what the PR does in the commit body.
+-->
 
 ### Fix
 If this is a fix, there should be a simple test of "this doesn't work on develop, does work on the fix branch"

@@ -5,11 +5,10 @@ ticket: DV-none
 <!--commit body should be wrapped at 72 chars as long as this comment-->
 
 
-## Testing notes from the author
 <!--
-This section is for notes on how to test or comments abou the review.
+Add this section for notes on how to test or comments about the review.
 Please put any additional description about what the PR does in the commit body.
--->
+## Testing notes from the author
 
 ### Fix
 If this is a fix, there should be a simple test of "this doesn't work on develop, does work on the fix branch"
@@ -20,7 +19,7 @@ If manual testing is required, please fill out this table:
 | ---                                          | ---                     |
 | appfoo handles a PSM with no path prediction | Outputs empty fields    |
 | appfoo handles a PSM with path prediction    | Outputs filled fields   |
-
+-->
 
 ## Reviewer Section
 * [ ] Are there no breaking changes / are the breaking changes documented?

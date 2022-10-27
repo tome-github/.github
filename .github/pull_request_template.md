@@ -9,11 +9,6 @@ ticket: DV-none
 Describe what the PR DOES in the commit body above.
 Put notes on how to test in this section.
 
-### Fix
-If this is a fix, there should be a simple test of "this doesn't work on develop, does work on the fix branch"
-
-### Feature
-If manual testing is required, please fill out this table:
 | Test Case                                    | How to tell if it works |
 | ---                                          | ---                     |
 | appfoo handles a PSM with no path prediction | Outputs empty fields    |

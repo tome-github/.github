@@ -1,14 +1,15 @@
 ticket: DV-none
 ****
-^^^^^ Commit body above, PR title is the commit subject
 <!--commit body should be wrapped at 72 chars as long as this comment-->
+<!--
+Describe what the PR DOES in the commit body above.
+Put notes on how to test in the testing section below.
+-->
 
 
 ## Testing notes from the author
-<!--
-Describe what the PR DOES in the commit body above.
-Put notes on how to test in this section.
 
+<!--
 | Test Case                                    | How to tell if it works |
 | ---                                          | ---                     |
 | appfoo handles a PSM with no path prediction | Outputs empty fields    |
@@ -16,6 +17,8 @@ Put notes on how to test in this section.
 -->
 
 ## Reviewer Section
+* [ ] Does the PR title clearly describe what the PR does?
+* [ ] Does the commit body describe what happened in required detail? (this may be none detail)
 * [ ] Are there no breaking changes / are the breaking changes documented?
 * [ ] Are unit tests added? (or not applicable)
 * [ ] Do the edited sections of code match our coding standards

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-callingDir=$(pwd)
-
 
 #TODO: hotfix flow
 # * create fix/whatever branch off release tag
@@ -82,9 +80,6 @@ urlencode() {
 
     LC_COLLATE=$old_lc_collate
 }
-
-#shellcheck disable=SC1091
-source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
 getPRTitle() {
     git log -1 --pretty=%s
@@ -240,7 +235,7 @@ merge() {
 
 
 doStuff() {
-    msg "doing $operation on $(pwd)"
+    msg "doing $operation on $repo"
 
     git fetch --prune >/dev/null
 
@@ -288,11 +283,13 @@ fi
 operation=$1
 shift
 
+# get repo root of cwd
+repo=$(git rev-parse --show-toplevel)
+cd "$repo"
+
 if [[ "$operation" != "version" && "$operation" != "branch" && "$operation" != "merge" && "$operation" != "pr" ]]; then
     help "invalid operation $operation"
 fi
-
-repos="$callingDir"
 
 if [ "$automatic" = true ]; then
     automationStatus="automated"
@@ -300,9 +297,9 @@ else
     automationStatus="non-automated"
 fi
 
-read -e -r -p "Performing $automationStatus $operation on $repos [y/N] " response
+read -e -r -p "Performing $automationStatus $operation on $repo [y/N] " response
 case "$response" in
   [yY][eE][sS]|[yY])
-    loopRepos "$repos" doStuff
+    doStuff
     ;;
 esac

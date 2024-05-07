@@ -49,8 +49,6 @@ checkInstalled() {
     command -v "$tool" >/dev/null 2>&1 || die "$messsage"
 }
 
-checkInstalled standard-version
-
 PR_TEMPLATE=$(cat <<'END_HEREDOC'
 * [ ] Changelog accurately represents the changes
 * [ ] end to end testing has involved this release branch
@@ -274,6 +272,8 @@ while true ; do
         *) die "issue parsing args, unexpected argument '$0'!" ;;
     esac
 done
+
+checkInstalled standard-version
 
 
 if [ "$#" -lt 1 ]; then
